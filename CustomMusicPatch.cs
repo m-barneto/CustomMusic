@@ -93,24 +93,9 @@ namespace CustomMusic
         [PatchPostfix]
         private static void PatchPostfix()
         {
-            //clear musicClips
-            CustomMusicComponent.musicClips.Clear();
-
-            //pick 5 unique random songs from files and then LoadAudio for each
-            var random = new System.Random();
-            var randomSongs = CustomMusicComponent.files.OrderBy(x => random.Next()).Take(5).ToArray();
-            foreach (var song in randomSongs)
-            {
-                Logger.LogInfo("random song: " + song);
-                string url = "file:///" + song.Replace("\\", "/");
-                CustomMusicComponent.LoadAudio(url);
-            }
-
+            
             //assume replacing original
             var guisounds = Singleton<GUISounds>.Instance;
-
-            var audioclip0 = AccessTools.Field(typeof(GUISounds), "audioClip_0").GetValue(guisounds);
-            audioclip0 = CustomMusicComponent.musicClips.ToArray();
 
             //force reload by invoking method_1 of guisounds
             Logger.LogInfo("Force Reload of all item sounds");
