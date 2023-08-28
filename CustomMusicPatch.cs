@@ -69,7 +69,7 @@ namespace CustomMusic
 
             //pick 10 or max unique random songs from files and then LoadAudio for each
             var random = new System.Random();
-            var randomSongs = files.OrderBy(x => random.Next()).Take(5).ToArray();
+            var randomSongs = files.OrderBy(x => random.Next()).Take(CustomMusicPlugin.SongLoadAmount.Value).ToArray();
 
             foreach (var song in randomSongs)
             {
