@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Aki.Reflection.Patching;
 using Comfort.Common;
+using DG.Tweening;
 using EFT;
 using EFT.UI;
 using HarmonyLib;
@@ -93,7 +94,7 @@ namespace CustomMusic
         [PatchPostfix]
         private static void PatchPostfix()
         {
-            
+
             //assume replacing original
             var guisounds = Singleton<GUISounds>.Instance;
 
@@ -104,6 +105,23 @@ namespace CustomMusic
         }
     }
 
+    public class HideoutScreenLoadPatch : ModulePatch
+    {
+        protected override MethodBase GetTargetMethod()
+        {
+            return AccessTools.Method(typeof(MainMenuController), nameof(MainMenuController.method_17));
+        }
 
+        [PatchPostfix]
+        private static void PatchPostfix(MainMenuController __instance)
+        {
+            var guiSounds = Singleton<GUISounds>.Instance;
+            guiSounds.method_6(true);
+
+            guiSounds.MasterMixer.DOSetFloat("HideoutVolume", Singleton<SharedGameSettingsClass>.Instance.Sound.Settings.HideoutVolumeValue, 0.5f);
+
+        }
+    }
 }
+
 

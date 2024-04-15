@@ -24,7 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
@@ -41,17 +41,32 @@
     </Reference>
     <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>F:\SPT-AKI\EscapeFromTarkov_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>F:\SPT-AKI-DEV\EscapeFromTarkov_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx">
       <HintPath>F:\SPT-AKI\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="Comfort, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\spt-aki-inventory-organizing-features\client-side\InventoryOrganizingFeatures\dependencies\sptaki360\Comfort.dll</HintPath>
+      <HintPath>.F:\SPT-AKI-DEV\EscapeFromTarkov_Data\Managed\Comfort.dll</HintPath>
+    </Reference>
+    <Reference Include="Comfort.Unity, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\SPT-AKI-DEV\EscapeFromTarkov_Data\Managed\Comfort.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\SPT-AKI-DEV\EscapeFromTarkov_Data\Managed\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween.Modules, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\SPT-AKI-DEV\EscapeFromTarkov_Data\Managed\DOTween.Modules.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>F:\SPT-AKI\EscapeFromTarkov_Data\Managed\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Oculus.AudioManager">
+      <HintPath>F:\SPT-AKI-DEV\EscapeFromTarkov_Data\Managed\Oculus.AudioManager.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="UnityEngine">
