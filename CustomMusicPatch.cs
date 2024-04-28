@@ -178,7 +178,6 @@ namespace CustomMusic {
         [HarmonyPatch(typeof(GUISounds), "method_1")]
         [HarmonyPostfix]
         static void OnMusicLoad(ref AudioClip[] ___audioClip_0) {
-            CustomMusicPlugin.logger.LogInfo("OnMusicLoad");
             ___audioClip_0 = null;
             InitializeSongShuffler();
         }
